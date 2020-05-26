@@ -15,7 +15,7 @@ There are two things to be done:
 2. Add environment variables for production and development that include the User Pool details.
 
 
-'''
+```
 "serve": {
      ...,
      "options": {
@@ -24,4 +24,4 @@ There are two things to be done:
           "sslCert": "../_ssl/localhost+2.pem",
           "ssl": true
      },
-'''
+```
