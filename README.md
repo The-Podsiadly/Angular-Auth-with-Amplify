@@ -6,6 +6,7 @@ This git contains pseudo files from a new Angular project that are used to creat
 The main problem we came across was testing an Auth flow locally.
 
 * Generate SSL certificate for local testing
+  * Follow (this tutorial)[https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8] to generate SSL certificates
 * Make sure you use anything other than Mozilla for testing (self-certificed SSL certificates will cause an error on Mozilla unless in Mozilla Developer)
 * Create Environment variables for production and testing that'll easily change the `cookieStorage domain` from `localhost` to your domain on build
 
