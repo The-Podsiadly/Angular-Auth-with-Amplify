@@ -13,3 +13,15 @@ The main problem we came across was testing an Auth flow locally.
 There are two things to be done:
 1. Create a testing Cognito pool to add `https://localhost/` to the callburk URIs
 2. Add environment variables for production and development that include the User Pool details.
+
+
+'''
+"serve": {
+     ...,
+     "options": {
+          "browserTarget": "authApp:build",
+          "sslKey": "../_ssl/localhost+2-key.pem",
+          "sslCert": "../_ssl/localhost+2.pem",
+          "ssl": true
+     },
+'''
