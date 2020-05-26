@@ -15,7 +15,8 @@ There are two things to be done:
 1. Create a testing Cognito pool to add `https://localhost/` to the callburk URIs
 2. Add environment variables for production and development that include the User Pool details.
 
-
+## Enabling SSL
+The Angular CLI provides us with three parameters we can pass along with the ng serve command to enable and configure SSL.
 ```
 "serve": {
      ...,
