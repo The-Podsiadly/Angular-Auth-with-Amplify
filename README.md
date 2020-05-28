@@ -5,7 +5,7 @@ This git contains pseudo files from a new Angular project that are used to creat
 
 **This explanation uses cookies rather than `localStorage`.** I decided to use this process because it allowed me to separate the authorization from the webapp authentication.  
 
-======
+--------
 
 The main problem we came across was during testing an Auth flow locally. Cookies weren't accepted from the webapp even though we had localhost enabled for the callback url and the authorization site wasn't saving the cookies correctly. We realized after a while that the cookies needed to be saved on a SSL certificate secured page.
 
