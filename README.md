@@ -32,7 +32,7 @@ Once you enable SSL in your `angular.json`, we recommend creating production and
 
 | First Header  | Second Header |
 | ------------- | ------------- |
-| ```"serve": {\n...,\n"options": {\n"browserTarget": "authApp:build",\n"sslKey": "../_ssl/localhost+2-key.pem",\n"sslCert": "../_ssl/localhost+2.pem",\n"ssl": true\n},```  | ```"serve": {\n...,\n"options": {\n"browserTarget": "authApp:build",\n"sslKey": "../_ssl/localhost+2-key.pem",\n"sslCert": "../_ssl/localhost+2.pem",\n"ssl": true\n},```  |
+| ```"serve": {\n...,\n"options": {\n"browserTarget": "authApp:build",`n"sslKey": "../_ssl/localhost+2-key.pem",\n"sslCert": "../_ssl/localhost+2.pem",\n"ssl": true\n},```  | ```"serve": {\n...,\n"options": {\n"browserTarget": "authApp:build",\n"sslKey": "../_ssl/localhost+2-key.pem",\n"sslCert": "../_ssl/localhost+2.pem",\n"ssl": true\n},```  |
 
 * Create Environment variables for production and testing that'll easily change the `cookieStorage domain` from `localhost` to your domain on build
 
