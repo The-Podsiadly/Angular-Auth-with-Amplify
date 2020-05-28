@@ -30,27 +30,50 @@ Once you enable SSL in your `angular.json`, we recommend creating production and
 
 **If using AWS, I highly recommend creating a separate Cognito user pool for testing.**
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-|```
-"serve": {
-     ...,
-     "options": {
-          "browserTarget": "authApp:build",
-          "sslKey": "../_ssl/localhost+2-key.pem",
-          "sslCert": "../_ssl/localhost+2.pem",
-          "ssl": true
+### Production Environment Variables
+```
+import { cognitoDetails } from './aws-details.prod';
+
+export const environment = {
+     production: true,
+     // cookieDomain: '.thereactant.com',
+     _region: cognitoDetails.region,
+     _userPoolId: cognitoDetails.userPoolId,
+     _userPoolWebClientId: cognitoDetails.userPoolWebClientId,
+     _cookieStorage: {
+          domain: '.thereactant.com',
+          path: '/',
+          expires: 365,
+          secure: true,
      },
-```|```
-"serve": {
-     ...,
-     "options": {
-          "browserTarget": "authApp:build",
-          "sslKey": "../_ssl/localhost+2-key.pem",
-          "sslCert": "../_ssl/localhost+2.pem",
-          "ssl": true
+     confirm: {
+          email: '',
+          password: ''
+     }
+};
+```
+
+### Development Environment Variables
+```
+import { cognitoDetails } from '../aws-details.dev';
+
+export const environment = {
+     production: false,
+     _region: cognitoDetails.region,
+     _userPoolId: cognitoDetails.userPoolId,
+     _userPoolWebClientId: cognitoDetails.userPoolWebClientId,
+     _cookieStorage: {
+          domain: 'localhost',
+          path: '/',
+          expires: 365,
+          secure: true,
      },
-```|
+     confirm: {
+          email: '',
+          password: ''
+     }
+};
+```
 
 * Create Environment variables for production and testing that'll easily change the `cookieStorage domain` from `localhost` to your domain on build
 
