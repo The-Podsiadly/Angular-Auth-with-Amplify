@@ -30,18 +30,23 @@ Once you enable SSL in your `angular.json`, we recommend creating production and
 
 **If using AWS, I highly recommend creating a separate Cognito user pool for testing.**
 
+### Cognito Details
+Instead of using the `aws-export.js`, we created our own called `aws-details.ts`. However, we made two files, `.dev.ts` and `.prod.ts` in order to separate production and development service details used in AWS.
+
+*In your cognito, do not forget to put `https://localhost/` into your callback URI **for your testing user pool**. This is important because, if mismanaged, can create a massive security flaw in your authorization/authentication flow.*
+
 ### Production Environment Variables
+Here is the code snippet for the `environment.prod.ts` file. We would change the `expires` and `domain` details here for our production mode. However, we would like to keep the number of changes to a minimum such as only changing the region, services, and domain to our production information.
 ```
 import { cognitoDetails } from './aws-details.prod';
 
 export const environment = {
      production: true,
-     // cookieDomain: '.thereactant.com',
      _region: cognitoDetails.region,
      _userPoolId: cognitoDetails.userPoolId,
      _userPoolWebClientId: cognitoDetails.userPoolWebClientId,
      _cookieStorage: {
-          domain: '.thereactant.com',
+          domain: '.domain.com',
           path: '/',
           expires: 365,
           secure: true,
@@ -54,6 +59,7 @@ export const environment = {
 ```
 
 ### Development Environment Variables
+Here is the code snippet for the `environment.ts` file. We would change the same information we did in the production environment variables in order to replicate the environment when testing, only true difference would be the `domain` in order to use cookies in our localhost and allow them to be accessed by the webapp in parallel.
 ```
 import { cognitoDetails } from '../aws-details.dev';
 
@@ -74,10 +80,3 @@ export const environment = {
      }
 };
 ```
-
-* Create Environment variables for production and testing that'll easily change the `cookieStorage domain` from `localhost` to your domain on build
-
-
-There are two things to be done:
-1. Create a testing Cognito pool to add `https://localhost/` to the callburk URIs
-2. Add environment variables for production and development that include the User Pool details.
