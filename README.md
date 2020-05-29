@@ -3,7 +3,7 @@ A detailed explanation of using an authentication flow on Angular 9+ with the Am
 
 This git contains pseudo files from a new Angular project that are used to create an authentication system through Amazon Web Services (AWS) products; we are using Cognito User Pools. 
 
-**This explanation uses cookies rather than `localStorage`.** I decided to use this process because it allowed me to separate the authorization from the webapp authentication.  
+**This explanation uses `cookieSotrage` rather than `localStorage`.** I decided to use this process because it allowed me to separate the authorization from the webapp authentication.  
 
 --------
 
