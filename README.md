@@ -9,7 +9,7 @@ This git contains pseudo files from a new Angular project that are used to creat
 
 The main problem we came across was during testing an Auth flow locally. Cookies weren't accepted from the webapp even though we had localhost enabled for the callback url and the authorization site wasn't saving the cookies correctly. We realized after a while that the cookies needed to be saved on a SSL certificate secured page.
 
-In order to get get an SSL certificate locally, follow [this tutorial](https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8).
+In order to generate an SSL certificate locally, follow [this tutorial](https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8).
 
 ## Enabling SSL
 The Angular CLI provides us with three parameters we can pass along with the ng serve command to enable and configure SSL, in your `angular.json`.
